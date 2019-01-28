@@ -1,0 +1,22 @@
+     
+    
+    {{ `<!--[if gte IE 9 | !IE ]><!-->` | safeHTML }}
+    <link rel="icon" href="/wet-boew/assets/favicon.ico"  type="image/x-icon" />
+    <link rel="stylesheet" href="/wet-boew/css/theme.min.css" />
+    {{ `<!--<![endif]-->` | safeHTML }}
+
+    {{ `<!--[if lt IE 9]>` | safeHTML }}
+    <link href="/wet-boew/assets/favicon.ico" rel="shortcut icon" />
+    <link rel="stylesheet" href="/wet-boew/css/ie8-theme.min.css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="/wet-boew/js/ie8-wet-boew.min.js"></script>
+    {{ `<![endif]-->` | safeHTML }}
+
+    {{ `<!--[if lte IE 9]>` | safeHTML }}
+
+
+    {{ `<![endif]-->` | safeHTML }}
+
+    <noscript><link rel="stylesheet" href="/wet-boew/css/noscript.min.css" /></noscript>
+
+    {{ partial "custom/headresources.html" . }}  
