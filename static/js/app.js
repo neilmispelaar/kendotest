@@ -13,7 +13,7 @@ $(function() {
 			transport: {
 				read: {
 					dataType: "jsonp",
-					url: "https://localhost:1313/js/temp.js",
+					url: "/js/temp.js",
 				}
 			}
 		}
