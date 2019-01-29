@@ -1,26 +1,55 @@
-<script id="template" type="text/x-kendo-template">
-    <ul>
-    # for (var i = 0; i < data.length; i++) { #
-        <li>#= data[i] #</li>
-    # } #
-    </ul>
-</script>
-
 $(function() {
-    
 
-    var index = new kendo.View('<span>Hello World!</span>');
-
-    var myFirstComboBox = new kendo.ui.ComboBox( , {
-
-                            }
+	// Append three empty divs that will be used by Kendo to convert to kendo objects
+	$("#app").append("<input id=\"q1\" />")
+	$("#app").append("<input id=\"q2\" />")
+	//$("#app").append("<input id=\"q3\" />")
 
 
-    index.render("#app");
+	$("#q1").kendoDropDownList({
+		dataTextField: "ProductName",
+		dataValueField: "ProductID",
+		dataSource: {
+			transport: {
+				read: {
+					dataType: "jsonp",
+					url: "https://localhost:1313/js/temp.js",
+				}
+			}
+		}
+	});
 
 
-    // Render a combobox 
+	$("#q2").kendoDropDownList({
+		index: 0,
+		dataTextField: "ProductName",
+		dataValueField: "ProductID",
+		dataSource: {
+			transport: {
+				read: {
+					dataType: "jsonp",
+					url: "https://demos.telerik.com/kendo-ui/service/Products"
+				}
+			}
+		}
+	});
 
+	/*
+	$("#q3").kendoDropDownList({
+		index: 0,
+		dataTextField: "ProductName",
+		dataValueField: "ProductID",
+		filter: "contains",
+		dataSource: {
+			transport: {
+				read: {
+					dataType: "jsonp",
+					url: "https://demos.telerik.com/kendo-ui/service/Products"
+				}
+			}
+		}
+	});
+	*/
 
 
 });
